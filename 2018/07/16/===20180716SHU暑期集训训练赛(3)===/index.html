@@ -285,7 +285,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">14</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">19</span></a>
 
   </li>
         
@@ -304,7 +304,7 @@
       
     
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">2</span></a>
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">3</span></a>
 
   </li>
         
@@ -323,7 +323,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">6</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">9</span></a>
 
   </li>
         
@@ -544,7 +544,7 @@
 <p>看的题 但没做出来 感觉都在能力范围之内 就是没想到</p>
 <h2 id="A"><a href="#A" class="headerlink" title="A"></a>A</h2><p>倒跑并查集<br>也蛮难写的 也要把一个点hash成一个值 就是二维变一维嘛<br>这 怎么想的到</p>
 <h2 id="B"><a href="#B" class="headerlink" title="B"></a>B</h2><p>tire树上的bfs<br>tire树都不知道是是什么 你让我怎么做</p>
-<h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><p>对一副乱序的扑克牌求排有序的最小<em>交换相邻元素的</em>操作个数<br>首先数据规模很小 （最多52张牌嘛）<br>先想想最暴力的做法咯 就对于给定的一副牌<br>排序的结果无非是 4!（花色全排列）*2^4（顺序和倒序）种结果 384<br>例如样例1<br>2h Th 8c Qh<br>所有的可能性 1.2h Th Qh 8c<br>            2.8c  2h Th Qh<br>还有倒序的，不写了<br>那验证每一种初态到给定态的检查的方法复杂度要多少啊？<br>不知道啊 卡住了啊 看题解。。。<br>怎么就LCS了拉 我怎么不知道什么意思啊？<br>那就考虑一个更简单的模型<br>一串乱序的数字序列 需要相邻元素交换几次才能变为不下降序列？<br>额 不需要相邻元素 随便交换  又读错题了。。。。<br>Sorting is done by moving one card at a time fromits current position to a new position in the hand, atthe start, end, or in between two adjacent cards. Whatis the smallest number of moves required to sort agiven hand of cards?<br>枚举4！种排列组合 和2^4 正序 倒序 暴力求解<br>求出最大的LCS就可以拉<br>有个小tips：A是王牌 是最大的。。。。wa了好几发 读题读题<br>看错题太蠢了</p>
+<h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><p>对一副乱序的扑克牌求排有序的最小_交换相邻元素的_操作个数<br>首先数据规模很小 （最多52张牌嘛）<br>先想想最暴力的做法咯 就对于给定的一副牌<br>排序的结果无非是 4!（花色全排列）*2^4（顺序和倒序）种结果 384<br>例如样例1<br>2h Th 8c Qh<br>所有的可能性 1.2h Th Qh 8c<br>            2.8c  2h Th Qh<br>还有倒序的，不写了<br>那验证每一种初态到给定态的检查的方法复杂度要多少啊？<br>不知道啊 卡住了啊 看题解。。。<br>怎么就LCS了拉 我怎么不知道什么意思啊？<br>那就考虑一个更简单的模型<br>一串乱序的数字序列 需要相邻元素交换几次才能变为不下降序列？<br>额 不需要相邻元素 随便交换  又读错题了。。。。<br>Sorting is done by moving one card at a time fromits current position to a new position in the hand, atthe start, end, or in between two adjacent cards. Whatis the smallest number of moves required to sort agiven hand of cards?<br>枚举4！种排列组合 和2^4 正序 倒序 暴力求解<br>求出最大的LCS就可以拉<br>有个小tips：A是王牌 是最大的。。。。wa了好几发 读题读题<br>看错题太蠢了</p>
 <h2 id="F"><a href="#F" class="headerlink" title="F"></a>F</h2><p>推公式 排列组合题 ，没什么难度 但我推不出</p>
 <h2 id="H"><a href="#H" class="headerlink" title="H"></a>H</h2><p>见过一道差不多的，没去写，亏了。找了半个小时没找到 算了。<br>额 我错了 看了那么久 还是看不懂<br>抄一遍代码 找感觉吧<br>额 又看了一遍题目。知道了，感觉有意思。<br>大意是：给n个矩形，让他们一个一个往上叠，约束条件是 宽严格递减（矩形可以旋转，所以长宽可以交换），求最大高度。（n个矩形都要用到）<br>1，建图。当时第一步都没想到，鬼知道要长宽相连建图啊，但其实应该知道，这已经不是第一次遇到了。（第二次）<br>建图前想一想，该怎么建图，如果单纯相连，那图的意义，边的意义，点的意义是什么？<br>这里主要是边的意义,认为规定 a-&gt;b的有向边是这个矩形啊 a为宽，b为高放置。（鬼才想的到，我想不到。）<br>利用约束条件有对这个图产生了新的限制：一个点最多一个出度（这个点只能做一次宽）<br>这个图可能有许多连通分支，就挑一个来看，这个连通分支有什么特点<br>2，已知：输入保证n个矩形能叠起来<br>那上界，n个点是不是最多n条边？  额，不知道。<br>证明一下咯，如果有n+1条边，至少一个点的出度&gt;=2.<br>有n条边，那连通分支中有一个环，再加一条边，又多一个环，就是说，n+1条边的无向图中有两个环<br>一个环已经自给自足了，没法有出度的边了，那只能别人进去，有两个别人需要进去的点（环缩点），那势必有一个点需要出度两次。<br><img src="/2018/07/16/===20180716SHU暑期集训训练赛(3)===/date\blog\source\_posts\===20180716SHU暑期集训训练赛(3" alt="1">===\1.png)</p>
 <p>所以n个点的连通分支最多只有n条边。</p>
@@ -611,8 +611,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/19/===20180619SHU暑期集训个人赛(1)===/" rel="next" title="20180619 SHU暑期集训个人赛(1)">
-                <i class="fa fa-chevron-left"></i> 20180619 SHU暑期集训个人赛(1)
+              <a href="/2018/07/16/LCS/" rel="next" title="LCS">
+                <i class="fa fa-chevron-left"></i> LCS
               </a>
             
           </div>
@@ -693,7 +693,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -710,7 +710,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -751,7 +753,17 @@
                     
                       
                     
-                    <span class="site-state-item-count">14</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">19</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1337,6 +1349,43 @@ setInterval("createtime()",250);
   
 
   
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<style>
+.MathJax_Display {
+    overflow: auto hidden;
+}
+</style>
+
+    
+  
+
 
   
   
