@@ -4,8 +4,8 @@
 
 # Site
 title: ZSY's blog
-subtitle:
-description: 钟顺源
+subtitle: 
+description: 
 keywords:
 author: 钟顺源
 language: zh-CN 
@@ -15,7 +15,7 @@ timezone:
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://syzhong.com/
 root: /
-permalink: :year/:month/:day/:title/
+permalink: :category/:title/
 permalink_defaults:
 
 # Directory
@@ -73,7 +73,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-##theme: landscape
+# theme: landscape
 theme: next
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
