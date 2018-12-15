@@ -153,9 +153,9 @@ for(int jj=0;jj<m;jj++)                      ==》  for(int jj=i==i
 看大佬的代码 至于为什么。。。，容我三思
 
 额，其实就是
-![1](D:\date\blog\source\_posts\kuangbin专题-搜索\1.jpg)
+![1](1.jpg)
 因为如果每行从自己开始的话会漏掉前面的一些点 或者干脆只优化一行，时间也没差多少
-![2](D:\date\blog\source\_posts\kuangbin专题-搜索\2.jpg)
+![2](2.jpg)
 ```c++
 #include<iostream>
 #include<stdio.h>

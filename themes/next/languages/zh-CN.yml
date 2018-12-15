@@ -11,7 +11,7 @@ menu:
   tags: 标签
   about: 关于
   search: 搜索
-  links : 链接
+  ## links : 链接
   schedule: 日程表
   sitemap: 站点地图
   commonweal: 公益 404

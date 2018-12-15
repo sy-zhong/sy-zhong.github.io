@@ -14,6 +14,7 @@
 # 课程相关
 - [Java课](http://dmis.shu.edu.cn/javase/)
 - [张涛](http://www.findai.net/)
+- [上海大学 e-learning](http://www.elearning.shu.edu.cn/portal)
 
 # 杂
 - [公式编辑器](http://latex.codecogs.com/eqneditor/editor.php)
