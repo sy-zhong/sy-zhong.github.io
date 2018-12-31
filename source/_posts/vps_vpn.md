@@ -3,27 +3,28 @@ title: vps配置-vpn
 tags :
     - vps
     - vpn
-date :
+date : 2018/12/27
 ---
+
 # 选择一个vps
 	首先给个忠告，要货比三家，并且不要心急，vps就在那里，晚点买并不会怎么样
 ------
 
 ##一、 vultr
-	比较不错的vps，也是我选择的vps，主要靠韬哥推荐（和好看的界面）
-	本来只需2.5美元的月租，现在要3.5美元了，2.5美元套餐只提供ipv6，运营商怎么可能会支持。没办法只能选3.5美元的。
+比较不错的vps，也是我选择的vps，主要靠韬哥推荐（和好看的界面）本来只需2.5美元的月租，现在要3.5美元了，2.5美元套餐只提供ipv6，运营商怎么可能会支持。没办法只能选3.5美元的。
 	
 ![](http://hub.syzhong.com:8000/nextcloud/index.php/s/7JFSzQ6JosX67w9/preview)
 	
 <!--more-->
 ##二、搬瓦工（BandwagonHost）
-	有一个方案性价比比较高，$19.9/year,平均￥12/month,如果单纯只是搭个vpn的话，性价比非常之高。但目前这个套餐售罄了，要买只能等了，等不及就直接vultr$3.5上车吧。
+	有一个方案性价比比较高，$19.9/year,平均￥12/month,如果单纯只是搭个vpn的话，性价比非常之高。
+	但目前这个套餐售罄了，要买只能等了，等不及就直接vultr$3.5上车吧。
 	
-------
 个人采用的是vultr，教程比较多，可以向韬哥请教，还可以搭个个人网盘+下载器去消耗用不完的流量。
 
+------
 # 正式搭建
-## 注测
+## 注册
 
 	这个就不详细说了，简单的。
 
@@ -53,8 +54,10 @@ date :
 	填你的主机名，随便填，就是用于辨识你的vps。
 ------------
 
-## 登不上
-好，现在你刚刚创建了一台vps，但征途还未结束，因为你可能发现你用xshell等远程登录软件登不上，多半ip被封了。
+## 远程主机连接不了
+好，现在你刚刚创建了一台vps，但还是台只有系统的裸机。
+你尝试用xshell等远程登录软件登远程登录，但登不上
+这个时候，多半是**ip被封了**。
 怎么看有没有被封呢？
 
 给两个扫描端口的网站，
@@ -65,18 +68,24 @@ date :
 ip:填你的ip   端口:22（默认就是22）
 ![](http://hub.syzhong.com:8000/nextcloud/index.php/s/jcT4PNdgqnxS6yC/preview)
 
-	一般都是开的，要是在这步就炸了，就重新删vps再重新开始吧,也可以改防火墙，但有点麻烦，还是删vps吧。
+>一般都是开的，要是在这步就炸了，就重新删vps再重新开始吧,也可以改防火墙，但有点麻烦，还是删vps吧。
 
 再扫国内端口
 ![](http://hub.syzhong.com:8000/nextcloud/index.php/s/yDFpSraRB8zwGSZ/preview)
 
-	这里可能22端口会关上，如果关闭了，那就删vps再来吧，不然这个vps就是可用的。
-## 登录
+>这里可能22端口会关上，如果关闭了，那就删vps再来吧，不然这个vps就是可用的。
+
+最直接的解决方法就是删机重来，一个节点不行换另一个。
+
+## 远程登录
 
 如果一切顺利，那么你就拥有了一台可以远程登录的主机。
-windows 用xshell等工具登录。
-linux 直接用ssh指令登录
+### windows 
+用xshell，putty等工具登录。
 
+### linux 
+直接用ssh指令登录
+	
 	ssh root@yourip
 
 
@@ -99,14 +108,20 @@ linux 直接用ssh指令登录
 注意在过程中记下**密码**,**加密方式**,**端口**，最终有参数，最好截个图。
 	
 卸载:
+
 	./shadowsocks.sh uninstall
+
 启动：
+
 	/etc/init.d/shadowsocks start
 停止：
+
 	/etc/init.d/shadowsocks stop
 重启：
+
 	/etc/init.d/shadowsocks restart
 状态：
+
 	/etc/init.d/shadowsocks status
 
 ### 锐速加速
@@ -137,7 +152,7 @@ linux 直接用ssh指令登录
 
 #### shadowsocks配置
 
-	也可以装图形界面，但相信我，会很不爽的。
+也可以装qt的图形界面，但相信我，会很不爽的。
 	
 	sudo vi /etc/shadowsocks.json
 	
@@ -154,6 +169,7 @@ linux 直接用ssh指令登录
 	}
 	
 启动
+
 	sslocal -c /etc/shadowsocks.json
 	
 如果需要开机启动，详情。
@@ -162,22 +178,27 @@ linux 直接用ssh指令登录
 #### 浏览器chrome代理设置
 	设置到这里，但还是不能科学上网，你需要用插件代理chrome。
 	安装SwitchyOmega插件
-	Github 下载 SwitchyOmega：![下载地址](https://github.com/FelisCatus/SwitchyOmega/releases/)  下载crx文件
+	Github下载SwitchyOmega：
+[SwitchyOmega](https://github.com/FelisCatus/SwitchyOmega/releases/)  
+
+	下载crx文件	
 	chrome 安装 插件，如果不让装，就用开发者模式，打开crx解压后的文件夹。
-	下载官方的配置文件：![下载地址](https://github.com/FelisCatus/SwitchyOmega/wiki/GFWList.bak)
+	下载官方的配置文件：
+[配置文件](https://github.com/FelisCatus/SwitchyOmega/wiki/GFWList.bak)
+	
 	然后导入，如果你的本地地址是1080，没有改动的话，是可以直接用的。
-	
 	然后直接重启，观察效果。
-	
-	如果没有成功，就检查以上每个步骤，多重启，多sslocal。
+
+
+如果没有成功，就检查以上每个步骤，多重启，多sslocal。
 
 
 		
 
 # 尾声
-	到现在，不出意外就可以科学上网了，但vps的性能还是略有剩余，500G的流量感觉挺少，但正常使用根本用不完，还有20G的ssd，我是搭建了一个私人网盘nextcloud，再搭配上aris2可以简单榨干存储容量和流量，博客之后放出。
+到现在，不出意外就可以科学上网了，但vps的性能还是略有剩余，500G的流量感觉挺少，但正常使用根本用不完，还有20G的ssd，我是搭建了一个私人网盘nextcloud，再搭配上aris2可以简单榨干存储容量和流量，博客之后放出。
 
 
 
-------------
+----
 end
