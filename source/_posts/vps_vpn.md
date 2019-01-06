@@ -94,7 +94,7 @@ ip:填你的ip   端口:22（默认就是22）
 	密码在server details 里 点进去就能找到
 
 如果觉得用账号密码登录太烦，可以用秘钥登录。
-详见 ![]() 
+[详见](http://syzhong.com/uncategorized/ssh%E7%A7%81%E9%92%A5%E5%92%8C%E5%85%AC%E9%92%A5/) 
 
 ## 搭建vpn（服务端）
 
@@ -172,7 +172,8 @@ ip:填你的ip   端口:22（默认就是22）
 
 	sslocal -c /etc/shadowsocks.json
 	
-如果需要开机启动，详情。
+如果需要开机启动，[详情](http://syzhong.com/uncategorized/ubuntu%2018.04%20%E7%AE%80%E5%8D%95%E8%AE%BE%E7%BD%AE/)
+
 	添加  sslocal -c /etc/shadowsocks.json
 
 #### 浏览器chrome代理设置
