@@ -4,6 +4,7 @@ tags :
     - ssh
 date : 2018/12/31
 ---
+<img src="http://hub.syzhong.com:8000/nextcloud/index.php/s/QcLyzfGrozNHypq/preview"   width="650" >
 
 # pre
 要连接到一个服务器
@@ -11,9 +12,9 @@ date : 2018/12/31
 两个级别的安全验证
 * **基于口令**（密码）
 * **基于密钥**
+<!--more-->
 
 ----------------
-<!--more-->
 之前一直使用密码登陆，因为xshel会帮你记住一切参数，而且ios，安卓也可以简单的登陆，但切换到ubuntu就没有那么方便，需要配置ssh。
 
 但说实话，基于密钥的登陆方法才比较安全，比主流的。
